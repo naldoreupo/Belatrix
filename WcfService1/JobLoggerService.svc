@@ -1,0 +1,4 @@
+﻿
+<%@ ServiceHost Language="C#" Debug="true" Service="Belatrix.Logger.Service.Interfaces.IJobLoggerService, Belatrix.Logger.Service.Interfaces"
+    Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf"
+     CodeBehind="JobLoggerService.svc" %>
