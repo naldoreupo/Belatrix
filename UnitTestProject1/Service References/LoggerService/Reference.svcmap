@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2e2f7c7e-c134-4b38-be3b-22612e6f745f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55221/JobLoggerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="JobLoggerService.wsdl" MetadataType="Wsdl" ID="9b7a91da-aec8-4a03-9a4b-41ad1e6603e2" SourceId="1" SourceUrl="http://localhost:55221/JobLoggerService.svc?wsdl" />
+    <MetadataFile FileName="JobLoggerService.xsd" MetadataType="Schema" ID="ab5e41ce-f2da-482a-acdb-2330475a92a2" SourceId="1" SourceUrl="http://localhost:55221/JobLoggerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="JobLoggerService1.xsd" MetadataType="Schema" ID="d9e40672-29f2-4601-ac39-b4255189822a" SourceId="1" SourceUrl="http://localhost:55221/JobLoggerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="JobLoggerService2.xsd" MetadataType="Schema" ID="dbb741bd-370b-4ced-bb4f-f08209e82919" SourceId="1" SourceUrl="http://localhost:55221/JobLoggerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="JobLoggerService3.xsd" MetadataType="Schema" ID="aa62466a-554a-4882-84ba-03a9a665917c" SourceId="1" SourceUrl="http://localhost:55221/JobLoggerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="JobLoggerService4.xsd" MetadataType="Schema" ID="d006c6e9-ce10-422b-a7ac-535b574e2bd5" SourceId="1" SourceUrl="http://localhost:55221/JobLoggerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="JobLoggerService.disco" MetadataType="Disco" ID="3d2adb8d-3b7b-4546-8534-508bd527be04" SourceId="1" SourceUrl="http://localhost:55221/JobLoggerService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
