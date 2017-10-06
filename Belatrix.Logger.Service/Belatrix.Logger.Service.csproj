@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E32A17FB-0A02-48C3-B7C4-72CF165E8AD6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Belatrix.Logger.Service</RootNamespace>
+    <AssemblyName>Belatrix.Logger.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JobLoggerService.svc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Belatrix.Logger.Domain\Belatrix.Logger.Domain.csproj">
+      <Project>{2398c80c-9d83-4bf8-9995-e0d42b93535b}</Project>
+      <Name>Belatrix.Logger.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Entities\Belatrix.Logger.Domain.Entities.csproj">
+      <Project>{5b9ce192-e90e-4dc1-a9ab-5bd4cdffed00}</Project>
+      <Name>Belatrix.Logger.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Interfaces\Belatrix.Logger.Domain.Interfaces.csproj">
+      <Project>{d0ff7bff-8761-4bd2-a8bb-51c6e50f5d62}</Project>
+      <Name>Belatrix.Logger.Domain.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Service.Interfaces\Belatrix.Logger.Service.Interfaces.csproj">
+      <Project>{b5228ebc-2151-43fd-9da7-cbf48eb66113}</Project>
+      <Name>Belatrix.Logger.Service.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Services.DTO\Belatrix.Logger.Service.DTO.csproj">
+      <Project>{221f8ecc-c3ce-42a3-b1e3-32fcc565da4b}</Project>
+      <Name>Belatrix.Logger.Service.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Transversal\Belatrix.Logger.Transversal.csproj">
+      <Project>{9f329734-3204-4a6e-beb3-b6eda1516993}</Project>
+      <Name>Belatrix.Logger.Transversal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
