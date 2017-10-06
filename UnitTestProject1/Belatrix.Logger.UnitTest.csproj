@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E42A13A-B864-4CE0-8DA7-D25611E3C50B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnitTestProject1</RootNamespace>
+    <AssemblyName>UnitTestProject1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="IocConfig.cs" />
+    <Compile Include="JobLoggerTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\LoggerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Belatrix.Logger.Domain\Belatrix.Logger.Domain.csproj">
+      <Project>{2398c80c-9d83-4bf8-9995-e0d42b93535b}</Project>
+      <Name>Belatrix.Logger.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Entities\Belatrix.Logger.Domain.Entities.csproj">
+      <Project>{5b9ce192-e90e-4dc1-a9ab-5bd4cdffed00}</Project>
+      <Name>Belatrix.Logger.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Interfaces\Belatrix.Logger.Domain.Interfaces.csproj">
+      <Project>{d0ff7bff-8761-4bd2-a8bb-51c6e50f5d62}</Project>
+      <Name>Belatrix.Logger.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Repository\Belatrix.Logger.Repository.csproj">
+      <Project>{443904f4-a6a2-4db0-9dee-92d60334edd6}</Project>
+      <Name>Belatrix.Logger.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Service.Interfaces\Belatrix.Logger.Service.Interfaces.csproj">
+      <Project>{b5228ebc-2151-43fd-9da7-cbf48eb66113}</Project>
+      <Name>Belatrix.Logger.Service.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Services.DTO\Belatrix.Logger.Service.DTO.csproj">
+      <Project>{221f8ecc-c3ce-42a3-b1e3-32fcc565da4b}</Project>
+      <Name>Belatrix.Logger.Service.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Service\Belatrix.Logger.Service.csproj">
+      <Project>{e32a17fb-0a02-48c3-b7c4-72cf165e8ad6}</Project>
+      <Name>Belatrix.Logger.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Belatrix.Logger.Transversal\Belatrix.Logger.Transversal.csproj">
+      <Project>{9f329734-3204-4a6e-beb3-b6eda1516993}</Project>
+      <Name>Belatrix.Logger.Transversal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentacion\Belatrix.Logger.App.csproj">
+      <Project>{ec7af01c-6975-48b1-b517-83450257ae2a}</Project>
+      <Name>Belatrix.Logger.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfService1\Belatrix.Logger.Service.Host.csproj">
+      <Project>{926b5826-f7a4-4b7b-8fa6-1bc9cd8693cd}</Project>
+      <Name>Belatrix.Logger.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\LoggerService\JobLoggerService.wsdl" />
+    <None Include="Service References\LoggerService\JobLoggerService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoggerService\JobLoggerService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoggerService\JobLoggerService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoggerService\JobLoggerService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoggerService\JobLoggerService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LoggerService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoggerService\JobLoggerService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoggerService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoggerService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoggerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

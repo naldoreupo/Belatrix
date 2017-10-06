@@ -1,0 +1,11 @@
+Errors:
+•	Don’t respect SOLID principles.
+•	Strongly coupled code.
+•	Hard code.
+•	SQL Sentences into the code.
+Recommendations :
+•	It should be separated into different layers to separate logic from data and presentation and avid coupling.
+•	The class JobLogger has two critical processes; it can be separated into two different classes with one responsibility.
+•	 It’s necessary use of pattern design.
+•	It’s necessary use enum to avoid hard code.
+•	Use Repository Pattern to separate separated business from data.
